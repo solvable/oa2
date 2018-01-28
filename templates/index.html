@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+    {{ block.super }}
+
+    <section>
+    <div class="container parallax">
+        <div class="row">
+            <div id="headerbg" class="col">
+
+
+</div>
+        </div>
+        </div>
+    </section>
+
+            <div class="row">
+                <div class="col-xl-6">
+                    <img src="{% static "img/stereo.jpg"%}"  class="big-nav">
+                </div>
+                <div class="col-xl-6">
+                    <img src="{% static "img/box.jpg" %}" class="big-nav">
+                </div>
+
+                <div class="col-xl-6">
+                    <img src="{% static "img/alarm.jpg" %}" class="big-nav">
+
+                </div>
+                <div class="col-xl-6">
+                    <img src="{% static "img/remote start.jpg" %}" class="big-nav">
+
+                </div>
+                <div class="col-xl-6">
+                    <img src="{% static "img/navigation.jpg" %}" class="big-nav">
+
+                </div>
+                <div class="col-xl-6">
+                    <img src="{% static "img/detailing.jpg" %}" class="big-nav">
+
+                </div>
+                <div class="col-xl-6">
+                    <img src="{% static "img/tint.jpg" %}" class="big-nav">
+
+                </div>
+                <div class="col-xl-6">
+                    <img src="{% static "img/projects.jpg" %}" class="big-nav">
+                </div>
+                </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}
+{% block footer %}
+    {{ block.super }}
+{% endblock footer %}
