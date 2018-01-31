@@ -6,19 +6,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>OxAudio - Philadelphia's Best Custom Car Audio and Security</title>
-    <meta name="author" content="name">
-    <meta name="description" content="description here">
-    <meta name="keywords" content="keywords,here">
-    <link rel="shortcut icon" href="static/favicon.ico" type="image/vnd.microsoft.icon">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta name="author" content="Evan Oxenhorn">
+    <meta name="description" content="OxAudio.com, Philadelphia's Best Automotive Security and Custom Stereo Shop">
+    <meta name="keywords" content="philly, philadelphia, philadelphia car stereo, car stereo, radio, speakers, custom fiberglass, car alarms, navigation systems">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <title>OxAudio - Philadelphia's Best Custom Car Audio and Security</title>
+
+
+    <!--stylesheet-->
     <link rel="stylesheet" href="{% static "css/stylesheet.css" %}">
-    <script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <!--Icons -->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
+    <!-- Google Analytics -->
     <script type="text/javascript">
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-XXXXXXXX-Y']);
@@ -37,35 +43,52 @@
 
 
 </head>
+
+
 <body>
 {% block nav %}
-    <img src="{% static "img/banner-trans.png" %}" class="header-graphic">
-    <nav class="site-header sticky-top py-1">
+<div class="container">
+    <img src="{% static "img/banner-trans.png" %}" class="responsive-img">
+</div>
 
-        <!--<div class="container d-flex flex-column flex-md-row justify-content-between">-->
-        <div class="container d-flex flex-nowrap flex-column flex-md-row justify-content-around">
+    <div class="container">
+    <nav>
+    <div class="nav-wrapper lime accent-4">
+        <a href="#!" class="brand-logo">Logo</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 
-            <div class="dropdown">
-                <a onclick="myFunction()" class="dropbtn"><i class="fas fa-bars"></i></a>
-                <div id="myDropdown" class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-                </div>
-            </div>
-
-
-            <a class="nav-item py-2 d-none d-md-inline-block" href="#">Projects</a>
-            <a class="nav-item py-2 d-none d-md-inline-block" href="#">Stereos</a>
-            <a class="nav-item py-2 d-none d-md-inline-block" href="#">Boxes</a>
-            <a class="nav-item py-2 d-none d-md-inline-block" href="#">Security</a>
-            <a class="nav-item py-2 d-none d-md-inline-block" href="#">Remote&nbspStart</a>
-            <a class="nav-item py-2 d-none d-md-inline-block" href="#">Navigation</a>
-            <a class="nav-item py-2 d-none d-md-inline-block" href="#">Detailing</a>
-            <a class="nav-item py-2 d-none d-md-inline-block" href="#">Contact</a>
-
+            <ul class="right hide-on-med-and-down">
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Stereos</a></li>
+                    <li><a href="#">Boxes</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Remote&nbspStart</a></li>
+                    <li><a href="#">Navigation</a></li>
+                    <li><a href="#">Detailing</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            <ul class="side-nav" id="mobile-demo">
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Stereos</a></li>
+                    <li><a href="#">Boxes</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Remote&nbspStart</a></li>
+                    <li><a href="#">Navigation</a></li>
+                    <li><a href="#">Detailing</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
         </div>
     </nav>
+
+</div>
+
+
+
+
+
+
+
+
 {% endblock nav %}
 
 {% block content %}
@@ -157,12 +180,11 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
             integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
             crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-            crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-            crossorigin="anonymous"></script>
+
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
     <script>
         /* When the user clicks on the button,
          toggle between hiding and showing the dropdown content */
@@ -187,7 +209,10 @@
 
 
     </script>
-
+    <script> $( document).ready(function(){
+        $(".button-collapse").sideNav();
+    })
+    </script>
 
 {% endblock footer %}
 
