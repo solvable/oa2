@@ -17,12 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from oa.views import IndexView
+from oa.views import *
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/', IndexView.as_view(),name="index"),
+    path('gallery/', GalleryView.as_view(),name="gallery"),
 
 
 ]

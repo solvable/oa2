@@ -13,6 +13,8 @@ class Project(models.Model):
     stereoMake = models.CharField(max_length=50, blank=True)
     created = models.DateTimeField(auto_now=False, auto_now_add=True)
     modified = models.DateTimeField(auto_now=True, auto_now_add=False)
+    featuredImage = models.ImageField(upload_to='photos/%Y/%m/%d', default='/static/img/project.jpg')
+
     slug = models.SlugField(max_length=50)
 
     def save(self, *args, **kwargs):
