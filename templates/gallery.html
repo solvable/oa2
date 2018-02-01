@@ -2,11 +2,12 @@
 
 {% block content %}
 <div class="container">
-  <div class="carousel carousel-slider center">
+        <div class="carousel carousel-slider center">
+
   {% for project in project_list %}
-      <div class="card z-depth-5">
-      <a class="carousel-item" href="#one!"><img src="{{ project.featuredImage.url }}"></a>
-      </div>
+
+      <a class="carousel-item " href="#one!"><img src="{{ project.featuredImage.url }}"></a>
+
  {% endfor %}
   </div>
 
@@ -15,7 +16,7 @@
 
     <script>
        $(document).ready(function(){
-      $('.carousel.carousel-slider').carousel({fullWidth:true, indicators:true});
+      $('.carousel.carousel-slider').carousel({dist:-50,indicators:true, fullWidth:true});
     });
     </script>
 {% endblock content %}
