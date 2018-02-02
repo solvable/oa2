@@ -23,21 +23,8 @@ class Project(models.Model):
 
     def save(self, *args, **kwargs):
         super(Project, self).save()
-        thumbSize = (400,300)
-        featuredSize = (800,600)
-        slug = slugify(self.nickname)
 
-        # resize image and save a thumbnail
-        file = self.featuredImage.path
-        thumbfile = self.thumbImage.path
-
-        thumb = Image.open(thumbfile)
-        featuredImage = Image.open(file)
-
-        featuredImage = image.resize(featuredSize, Image.ANTIALIAS)
-        thumb= image.thumbnail(thumbSize, Image.ANTIALIAS)
-        self.thumbImage.path =  thumb.save()
-        self.featuredImage.path = featuredImage.save()
+        self.slug = slugify(self.nickname)
 
         super(Project, self).save(*args, **kwargs)
 
@@ -47,8 +34,8 @@ class Project(models.Model):
     def __str__(self):
         return str(self.slug)
 
-    # def get_absolute_url(self):
-    #     return reverse("project_detail", kwargs={"id": self.id})
+    def get_absolute_url(self):
+        return reverse("project_detail", kwargs={"id": self.id})
     #
     # def edit_url(self):
     #     return reverse("project_edit", kwargs={"id":self.id})

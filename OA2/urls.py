@@ -24,7 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/', IndexView.as_view(),name="index"),
     path('gallery/', GalleryView.as_view(),name="gallery"),
-
+    path('gallery/<proj>', ProjectView.as_view(), name="project"),
 
 ]
 

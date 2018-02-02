@@ -6,7 +6,8 @@
 
   {% for project in project_list %}
 
-      <a class="carousel-item " href="#one!"><img src="{{ project.featuredImage.url }}"></a>
+      <a class="carousel-item " href="{% url 'project' proj=project.slug %}"><img src="{{ project.featuredImage.url }}"></a>
+
 
  {% endfor %}
   </div>
