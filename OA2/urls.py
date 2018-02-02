@@ -25,7 +25,7 @@ urlpatterns = [
     path('index/', IndexView.as_view(),name="index"),
     path('gallery/', GalleryView.as_view(),name="gallery"),
     path('gallery/<proj>', ProjectView.as_view(), name="project"),
-
+    path('stereo/', StereoView.as_view(), name='stereo')
 ]
 
 if settings.DEBUG is True:

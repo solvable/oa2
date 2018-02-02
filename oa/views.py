@@ -21,3 +21,6 @@ class ProjectView(generic.DetailView):
 class GalleryView(generic.ListView):
     model = Project
     template_name = 'gallery.html'
+
+class StereoView(generic.TemplateView):
+    template_name = 'stereo.html'

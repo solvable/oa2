@@ -5,7 +5,11 @@
 <div class="row">
     {% for image in object.images.all %}
     <div class="col s12">
-        <img src="{{ image.image.url }}" class="materialboxed" width="100%">
+    <div class="card">
+        <div class="card-image z-depth-5">
+        <img src="{{ image.image.url }}" class="materialboxed">
+        </div>
+        </div>
         </div>
     {% endfor %}
 
