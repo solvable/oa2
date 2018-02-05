@@ -25,7 +25,11 @@ urlpatterns = [
     path('index/', IndexView.as_view(),name="index"),
     path('gallery/', GalleryView.as_view(),name="gallery"),
     path('gallery/<proj>', ProjectView.as_view(), name="project"),
-    path('stereo/', StereoView.as_view(), name='stereo')
+    path('systems/', SystemView.as_view(), name='systems'),
+    path('security/', SecurityView.as_view(), name='security'),
+    path('remote_start/', RemoteStartView.as_view(), name='remote-start'),
+    path('nav_systems/', NavSystemView.as_view(), name='nav-systems'),
+    path('detailing/', DetailingView.as_view(), name='detailing'),
 ]
 
 if settings.DEBUG is True:

@@ -22,5 +22,21 @@ class GalleryView(generic.ListView):
     model = Project
     template_name = 'gallery.html'
 
-class StereoView(generic.TemplateView):
-    template_name = 'stereo.html'
+
+
+
+class SystemView(generic.TemplateView):
+    template_name = 'speakers.html'
+
+
+class SecurityView(generic.TemplateView):
+    template_name = 'security.html'
+
+class RemoteStartView(generic.TemplateView):
+    template_name = 'remote_start.html'
+
+class NavSystemView(generic.TemplateView):
+    template_name = 'nav_systems.html'
+
+class DetailingView(generic.TemplateView):
+    template_name='detailing.html'
