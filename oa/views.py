@@ -40,3 +40,8 @@ class NavSystemView(generic.TemplateView):
 
 class DetailingView(generic.TemplateView):
     template_name='detailing.html'
+
+
+class ContactView(generic.TemplateView):
+    template_name = 'contact.html'
+

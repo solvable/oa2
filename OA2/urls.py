@@ -30,6 +30,7 @@ urlpatterns = [
     path('remote_start/', RemoteStartView.as_view(), name='remote-start'),
     path('nav_systems/', NavSystemView.as_view(), name='nav-systems'),
     path('detailing/', DetailingView.as_view(), name='detailing'),
+    path('contact/', ContactView.as_view(), name='contact'),
 ]
 
 if settings.DEBUG is True:
