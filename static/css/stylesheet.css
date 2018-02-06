@@ -1,24 +1,24 @@
-body{
+body {
     /*background-color:#444444;*/
     background-color: dimgray;
 }
 
-.header-img{
-    background-color:black;
+.header-img {
+    background-color: black;
 
 }
 
-
-
-
-/* The sticky class is added to the navbar with JS when it reaches its scroll position */
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%
+/*Class for when element is above threshold*/
+.pin-top {
+    position: relative;
 }
 
-/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-.sticky + .content {
-  padding-top: 60px;
+/*Class for when element is below threshold*/
+.pin-bottom {
+    position: relative;
+}
+
+/*Class for when element is pinned*/
+.pinned {
+    position: fixed !important;
 }

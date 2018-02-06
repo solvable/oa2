@@ -182,34 +182,37 @@
 
 
     </script>
+
+
+
+    <script>
+    $('.pushpin-demo-nav').each(function() {
+    var $this = $(this);
+    var $target = $('#' + $(this).attr('data-target'));
+    $this.pushpin({
+      top: $target.offset().top,
+      bottom: $target.offset().top + $target.outerHeight() - $this.height()
+    });
+  });
+
+    </script>
+
+
+
+
+
+
     <script> $(document).ready(function () {
         $(".button-collapse").sideNav();
         $('.tap-target').tapTarget('open');
         $('.tap-target').tapTarget('close');
+        $('.target').pushpin({top: 0, bottom: 1000, offset: 0});
 
 
     })
     </script>
 
-    <script>
-    // When the user scrolls the page, execute myFunction
-    window.onscroll = function() {myFunction()};
 
-    // Get the navbar
-    var navbar = document.getElementById("navbar");
-
-    // Get the offset position of the navbar
-    var sticky = navbar.offsetTop;
-
-    // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-    function myFunction() {
-      if (window.pageYOffset >= sticky) {
-        navbar.classList.add("sticky")
-      } else {
-        navbar.classList.remove("sticky");
-      }
-    }
-    </script>
 
 
 
