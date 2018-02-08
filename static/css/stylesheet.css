@@ -15,6 +15,10 @@ body {
   width: 100%
 }
 
+#flip{
+
+}
+
 
 #panel, #flip {
     padding: 5px;
@@ -30,7 +34,35 @@ body {
 #panel > form > p > label{
     color: black;
 }
-#panel > form > p >#id_contact_email{
+#panel > form > p > input{
     color:black;
+    background-color: white;
 }
 
+#panel > form > p > textarea{
+    color:black;
+    background-color: white;
+}
+
+
+// Class for when element is above threshold
+.pin-top {
+position: relative;
+}
+
+// Class for when element is below threshold
+.pin-bottom {
+position: relative;
+}
+
+// Class for when element is pinned
+.pinned {
+position: fixed !important;
+  }
+
+   /* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}

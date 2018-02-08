@@ -6,7 +6,7 @@ from django.views.generic.edit import FormMixin
 from django.shortcuts import get_object_or_404
 from .models import Project, ProjectImages
 from .forms import ContactForm
-
+from django.core.mail import send_mail
 from django.core.mail import EmailMessage
 from django.shortcuts import redirect
 from django.template import Context
@@ -25,39 +25,38 @@ class ContactMixin(FormMixin):
 
 
     def form_valid(self, form):
-        contact_name = request.POST.get(
-            'contact_name'
-            , '')
-        contact_email = request.POST.get(
-            'contact_email'
-            , '')
+        contact_name = request.POST.get('contact_name', '')
+        contact_email = request.POST.get('contact_email', '')
         form_message = request.POST.get('message', '')
 
-        # Email the profile with the contact information
-        template = get_template('static/contact_template.txt')
-        context = Context({
-            'contact_name': contact_name,
-            'contact_email': contact_email,
-            'form_message': form_message,
-        })
-        content = template.render(context)
 
-        email = EmailMessage(
-            "New contact form submission",
-            content,
-            "OxAudio.com" + '',
-            ['info@oxaudio.com'],
-            headers={'Reply-To': contact_email}
+        send_mail(
+            subject = "New Appointment Request",
+            message = contact_name+ "said: " + form_message,
+            from_email = contact_email,
+            recipient_list = ['info@oxaudio.com'],
+            fail_silently=False
         )
-        email.send()
-        form.send_email()
-        return super().form_valid(form)
+
+
+    def form_valid(self, form):
+        message = "{name} / {email} said: ".format(
+            name=form.cleaned_data.get('name'),
+            email=form.cleaned_data.get('email'))
+        message += "\n\n{0}".format(form.cleaned_data.get('message'))
+        send_mail(
+            subject=form.cleaned_data.get('subject').strip(),
+            message=message,
+            from_email='contact-form@myapp.com',
+            recipient_list=[settings.LIST_OF_EMAIL_RECIPIENTS],
+        )
+        return super(ContactFormView, self).form_valid(form)
+
 
     def post(self, request, *args, **kwargs):
         context = self.get_context_data()
         if context["form"].is_valid():
-            print
-            'yes done'
+            print('yes done')
             # save your model
             # redirect
 
