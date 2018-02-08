@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 {% load static %}
-
 <html>
 
 <head>
@@ -18,8 +17,17 @@
     <!--stylesheet-->
     <link rel="stylesheet" href="{% static "css/stylesheet.css" %}">
 
+    <script
+            src="http://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
 
     <!--Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -43,57 +51,67 @@
     </script>
 
 
-    <script
-            src="http://code.jquery.com/jquery-3.3.1.min.js"
-            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-            crossorigin="anonymous"></script>
-
-
 </head>
 
 
 <body>
 <div class="container">
-    <img src="{% static "img/banner-trans.png" %}" class=" z-depth-5 header-img responsive-img">
+    <a href="{% url 'index' %}"><img src="{% static "img/banner-trans.png" %}"
+                                     class=" z-depth-5 header-img responsive-img"></a>
 
 
 </div>
 {% block nav %}
-    <div class="container">
-    </div>
+
+
 
     <div class="container">
-        <nav>
+        <div class="navbar">
+            <div class="nav">
+                <nav>
+                    <div class="nav-wrapper lime accent-4 z-depth-5">
+                        <a href="#!" class="brand-logo"></a>
+                        <a href="#" data-activates="mobile-demo" class="button-collapse"><i
+                                class="material-icons">menu</i></a>
 
-            <div class="nav-wrapper lime accent-4 z-depth-5" id="navbar">
-                <a href="#!" class="brand-logo"></a>
-                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="{% url 'gallery' %}" class="black-text">Projects</a></li>
-                    <li><a href="{% url 'systems' %}" class="black-text">Systems</a></li>
-                    <li><a href="{% url 'security' %}" class="black-text">Security</a></li>
-                    <li><a href="{% url 'remote-start' %}" class="black-text">Remote&nbspStart</a></li>
-                    <li><a href="{% url 'nav-systems' %}" class="black-text">Navigation</a></li>
-                    <li><a href="{% url 'detailing' %}" class="black-text">Detailing</a></li>
-                    <li><a href="{% url 'contact' %}" class="black-text">Contact</a></li>
-                </ul>
-                <ul class="side-nav black" id="mobile-demo">
-                    <li><a href="{% url 'gallery' %}" class="lime-text accent-1">Projects</a></li>
-                    <li><a href="{% url 'systems' %}" class="lime-text accent-1">Systems</a></li>
-                    <li><a href="{% url 'security' %}" class="lime-text accent-1">Security</a></li>
-                    <li><a href="{% url 'remote-start' %}" class="lime-text accent-1">Remote&nbspStart</a></li>
-                    <li><a href="{% url 'nav-systems' %}" class="lime-text accent-1">Navigation</a></li>
-                    <li><a href="{% url 'detailing' %}" class="lime-text accent-1">Detailing</a></li>
-                    <li><a href="{% url 'contact' %}" class="lime-text accent-1">Contact</a></li>
-                </ul>
+                        <ul class="right hide-on-med-and-down">
+                            <li><a href="{% url 'gallery' %}" class="black-text">Projects</a></li>
+                            <li><a href="{% url 'systems' %}" class="black-text">Systems</a></li>
+                            <li><a href="{% url 'security' %}" class="black-text">Security</a></li>
+                            <li><a href="{% url 'remote-start' %}" class="black-text">Remote&nbspStart</a></li>
+                            <li><a href="{% url 'nav-systems' %}" class="black-text">Navigation</a></li>
+                            <li><a href="{% url 'detailing' %}" class="black-text">Detailing</a></li>
+                            <li><a href="{% url 'contact' %}" class="black-text">Contact</a></li>
+                        </ul>
+                        <ul class="side-nav black" id="mobile-demo">
+                            <li><a href="{% url 'gallery' %}" class="lime-text accent-1">Projects</a></li>
+                            <li><a href="{% url 'systems' %}" class="lime-text accent-1">Systems</a></li>
+                            <li><a href="{% url 'security' %}" class="lime-text accent-1">Security</a></li>
+                            <li><a href="{% url 'remote-start' %}" class="lime-text accent-1">Remote&nbspStart</a></li>
+                            <li><a href="{% url 'nav-systems' %}" class="lime-text accent-1">Navigation</a></li>
+                            <li><a href="{% url 'detailing' %}" class="lime-text accent-1">Detailing</a></li>
+                            <li><a href="{% url 'contact' %}" class="lime-text accent-1">Contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
             </div>
-        </nav>
+        </div>
+    </div>
+    <div class="container">
+        <div id="flip">Make an Appointment</div>
+        <div id="panel">
 
+                {% include "contact_form.html" %}
+
+
+
+        </div>
     </div>
 
 
+    </div>
 
+    </div>
 
 
 
@@ -123,25 +141,26 @@
 
 
     <footer class="container">
-    <hr>
-    <div class="row">
-        <div class="col l3">
-            <a class="lime-text" href="#">Team</a>
+
         </div>
-        <div class="col l3">
-            <a class="lime-text" href="#">Locations</a>
-        </div>
-        <div class="col l3">
-            <a class="lime-text" href="#">Privacy</a>
-        </div>
-        <div class="col l3">
-            <a class="lime-text" href="#">Terms</a>
+        <hr>
+        <div class="row">
+            <div class="col l3">
+                <a class="lime-text" href="#">Team</a>
+            </div>
+            <div class="col l3">
+                <a class="lime-text" href="#">Locations</a>
+            </div>
+            <div class="col l3">
+                <a class="lime-text" href="#">Privacy</a>
+            </div>
+            <div class="col l3">
+                <a class="lime-text" href="#">Terms</a>
+            </div>
+
         </div>
 
-    </div>
-
-    <!-- Element Showed -->
-
+        <!-- Element Showed -->
 
 
     </footer>
@@ -155,71 +174,28 @@
 
 
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-
-    <script>
-        /* When the user clicks on the button,
-         toggle between hiding and showing the dropdown content */
-        function myFunction() {
-            document.getElementById("myDropdown").classList.toggle("show");
-        }
-
-        // Close the dropdown menu if the user clicks outside of it
-        window.onclick = function (event) {
-            if (!event.target.matches('.dropbtn')) {
-
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                var i;
-                for (i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
-                }
-            }
-        }
-
-
-    </script>
-
-
-
-    <script>
-    $('.pushpin-demo-nav').each(function() {
-    var $this = $(this);
-    var $target = $('#' + $(this).attr('data-target'));
-    $this.pushpin({
-      top: $target.offset().top,
-      bottom: $target.offset().top + $target.outerHeight() - $this.height()
-    });
-  });
-
-    </script>
-
-
-
-
-
-
-    <script> $(document).ready(function () {
-        $(".button-collapse").sideNav();
-        $('.tap-target').tapTarget('open');
-        $('.tap-target').tapTarget('close');
-        $('.target').pushpin({top: 0, bottom: 1000, offset: 0});
-
-
-    })
-    </script>
-
-
 
 
 
 
 
 {% endblock footer %}
+<script>
 
+
+    $(document).ready(function () {
+
+
+        $(".button-collapse").sideNav();
+        $("#flip").click(function () {
+            $("#panel").slideToggle();
+        });
+
+
+    })
+
+
+</script>
 
 </body>
 </html>
