@@ -10,7 +10,7 @@ from .forms import ContactForm
 class ContactMixin(FormMixin):
     template_name = 'contact.html'
     form_class = ContactForm
-    success_url = '/thanks/'
+    success_url = 'index'
 
     def form_valid(self, form):
         # This method is called when valid form data has been POSTed.
@@ -18,6 +18,8 @@ class ContactMixin(FormMixin):
         form.send_email()
         return super().form_valid(form)
 
+    def form_invalid(self, form):
+        return super().form_invalid(form)
 
 class IndexView(ContactMixin, generic.TemplateView):
     template_name = 'index.html'
