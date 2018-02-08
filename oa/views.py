@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponse, redirect
+from django.http import request
 from django.views import generic
 from django.views.generic.base import TemplateView, ContextMixin
 from django.views.generic.edit import FormMixin
@@ -6,20 +7,61 @@ from django.shortcuts import get_object_or_404
 from .models import Project, ProjectImages
 from .forms import ContactForm
 
+from django.core.mail import EmailMessage
+from django.shortcuts import redirect
+from django.template import Context
+from django.template.loader import get_template
+
+
+
+
+
+
 # Create your views here.
 class ContactMixin(FormMixin):
     template_name = 'contact.html'
     form_class = ContactForm
     success_url = 'index'
 
+
     def form_valid(self, form):
-        # This method is called when valid form data has been POSTed.
-        # It should return an HttpResponse.
+        contact_name = request.POST.get(
+            'contact_name'
+            , '')
+        contact_email = request.POST.get(
+            'contact_email'
+            , '')
+        form_message = request.POST.get('message', '')
+
+        # Email the profile with the contact information
+        template = get_template('static/contact_template.txt')
+        context = Context({
+            'contact_name': contact_name,
+            'contact_email': contact_email,
+            'form_message': form_message,
+        })
+        content = template.render(context)
+
+        email = EmailMessage(
+            "New contact form submission",
+            content,
+            "OxAudio.com" + '',
+            ['info@oxaudio.com'],
+            headers={'Reply-To': contact_email}
+        )
+        email.send()
         form.send_email()
         return super().form_valid(form)
 
-    def form_invalid(self, form):
-        return super().form_invalid(form)
+    def post(self, request, *args, **kwargs):
+        context = self.get_context_data()
+        if context["form"].is_valid():
+            print
+            'yes done'
+            # save your model
+            # redirect
+
+        return super(TemplateView, self).render_to_response(context)
 
 class IndexView(ContactMixin, generic.TemplateView):
     template_name = 'index.html'

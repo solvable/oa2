@@ -19,7 +19,7 @@ body {
 #panel, #flip {
     padding: 5px;
     text-align: center;
-    background-color: #e5eecc;
+    background-color: #a2c529;
     border: solid 1px #c3c3c3;
 }
 
@@ -27,3 +27,10 @@ body {
     padding: 50px;
     display: none;
 }
+#panel > form > p > label{
+    color: black;
+}
+#panel > form > p >#id_contact_email{
+    color:black;
+}
+
