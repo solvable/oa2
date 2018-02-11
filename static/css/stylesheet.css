@@ -1,6 +1,12 @@
 body {
     /*background-color:#444444;*/
     background-color: white;
+
+
+}
+
+a{
+    color:#a2c529 !important;
 }
 
 .header-img {
@@ -64,6 +70,20 @@ li{
     font-weight: bold;
 }
 
+.bold-text{
+    font-weight:bold !important;
+}
+
+
+
 .foot{
     background-color:black;
+}
+
+.messages{
+    position: absolute;
+    background-color: white;
+    border-radius:10px;
+    padding:10px;
+
 }
