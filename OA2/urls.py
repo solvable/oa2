@@ -31,6 +31,7 @@ urlpatterns = [
     path('nav_systems/', NavSystemView.as_view(), name='nav-systems'),
     path('detailing/', DetailingView.as_view(), name='detailing'),
     path('contact/', ContactView.as_view(), name='contact'),
+    path('privacy/', PrivacyView.as_view(), name='privacy')
 ]
 
 if settings.DEBUG is True:

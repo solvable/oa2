@@ -93,4 +93,5 @@ class DetailingView(ContactMixin, generic.TemplateView):
 class ContactView(ContactMixin, generic.TemplateView):
     template_name = 'contact.html'
 
-
+class PrivacyView(TemplateView):
+    template_name = 'privacypolicy.html'

@@ -13,7 +13,9 @@ a{
     background-color: black;
 
 }
-
+.fab{
+    color:#a2c529 !important;
+}
 /* The sticky class is added to the navbar with JS when it reaches its scroll position */
 .sticky {
   position: fixed;

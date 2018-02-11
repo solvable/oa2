@@ -1,32 +1,36 @@
 {% extends 'base.html' %}
+{%  load static %}
 {% block content %}
     <div class="container" xmlns="http://www.w3.org/1999/html">
         <div class="row">
             <div class="col s12">
                 <div class="card z-depth-5">
                     <p class="flow-text center-align">
-                        Navigation systems come standard on many new cars. But there’s no reason your car or truck
+                        Navigation systems come standard on most new cars. But there’s no reason your car or truck
                         that’s a few years older can’t have that same convenience.
+
                         In vehicle navigation helps you get where your going fast. An in-dash system replaces your
                         factory radio, either with a permanent screen, or a flip up monitor that stays hidden in the
                         dashboard. Most in dash systems can also double as a monitor for DVD’s.
 
                     </p>
-
-
                 </div>
+
+                <div class="parallax-container">
+                    <div class="parallax"><img src="{% static "img/navigation/navigation1.jpg" %}"></div>
+                </div>
+
                 <div class="card z-depth-5">
                     <p class="flow-text center-align">
                         Maybe you want to hard-wire your detachable system, and free up that power port in your car. We
                         also add systems to bikes so you can focus on the ride, instead of the directions.
-                        There are a lot of options out there for Nav systems, and we’ve installed all the good ones.
-                        Make an appointment today to find out what will work best for your vehicle.
+                        <a href="{% url 'contact' %}">Make an appointment today to find out what will work best for your vehicle.</a>
 
                     </p>
 
 
                 </div>
-                <div class="card z-depth-5">
+
                     <p class="flow-text center-align">
                         Here are some of the reasons why you’re safer with GPS:
                     <ol>
@@ -62,31 +66,9 @@
 
 
                 </div>
-                <div class="card z-depth-5">
-                    <p class="flow-text center-align">
-
-                    </p>
-
-
-                </div>
-                <div class="card z-depth-5">
-                    <p class="flow-text center-align">
-
-                    </p>
-
-
-                </div>
-                <div class="card z-depth-5">
-                    <p class="flow-text center-align">
-
-                    </p>
-
-
-                </div>
 
             </div>
         </div>
-    </div>
 
 
 
