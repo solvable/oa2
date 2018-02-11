@@ -7,4 +7,3 @@ class ContactForm(forms.Form):
         required=True,
         widget=forms.Textarea
     )
-    #next = forms.CharField(required=True, show_hidden_initial=True)

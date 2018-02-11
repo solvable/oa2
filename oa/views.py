@@ -44,8 +44,6 @@ class ContactMixin(FormMixin):
             # to get proper validation errors.
             return HttpResponse('Make sure all fields are entered and valid.')
 
-        #return HttpResponse('Success! Thank you for your message.')
-        #return HttpResponseRedirect(next)
         return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
 
