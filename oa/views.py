@@ -8,6 +8,7 @@ from .models import Project, ProjectImages
 from .forms import ContactForm
 from django.core.mail import send_mail
 from django.core.mail import EmailMessage
+from django.contrib import messages
 from django.shortcuts import redirect
 from django.template import Context
 from django.template.loader import get_template
@@ -36,6 +37,8 @@ class ContactMixin(FormMixin):
             try:
                 send_mail(subject, message, from_email, ['info@oxaudio.com'], fail_silently=False)
                 print("success")
+                messages.add_message(request, messages.INFO, 'Thanks for contacting us, we will be in touch shortly!.')
+
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
 

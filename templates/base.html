@@ -55,61 +55,75 @@
 
 
 <body>
+
 <div class="container">
+
+
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+
+
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+
+
     <a href="{% url 'index' %}"><img src="{% static "img/banner-trans.png" %}"
                                      id="header-img" class=" z-depth-5 header-img responsive-img"></a>
 
 
 </div>
 {% block nav %}
+    <div id="navvy">
+        <div class="container">
+            <div class="navbar">
+                <div class="nav">
+                    <nav>
+                        <div class="nav-wrapper">
+                            <a href="#!" class="brand-logo"></a>
+                            <a href="#" data-activates="mobile-demo" class="button-collapse"><i
+                                    class="material-icons">menu</i></a>
 
-
-<div id="navvy">
-    <div class="container">
-        <div class="navbar">
-            <div class="nav">
-                <nav>
-                    <div class="nav-wrapper">
-                        <a href="#!" class="brand-logo"></a>
-                        <a href="#" data-activates="mobile-demo" class="button-collapse"><i
-                                class="material-icons">menu</i></a>
-
-                        <ul class="right hide-on-med-and-down">
-                            <li><a href="{% url 'gallery' %}" class="black-text">Projects</a></li>
-                            <li><a href="{% url 'systems' %}" class="black-text">Systems</a></li>
-                            <li><a href="{% url 'security' %}" class="black-text">Security</a></li>
-                            <li><a href="{% url 'remote-start' %}" class="black-text">Remote&nbspStart</a></li>
-                            <li><a href="{% url 'nav-systems' %}" class="black-text">Navigation</a></li>
-                            <li><a href="{% url 'detailing' %}" class="black-text">Detailing</a></li>
-                            <li><a href="{% url 'contact' %}" class="black-text">Contact</a></li>
-                        </ul>
-                        <ul class="side-nav black" id="mobile-demo">
-                            <li><a href="{% url 'gallery' %}" class="lime-text accent-1">Projects</a></li>
-                            <li><a href="{% url 'systems' %}" class="lime-text accent-1">Systems</a></li>
-                            <li><a href="{% url 'security' %}" class="lime-text accent-1">Security</a></li>
-                            <li><a href="{% url 'remote-start' %}" class="lime-text accent-1">Remote&nbspStart</a></li>
-                            <li><a href="{% url 'nav-systems' %}" class="lime-text accent-1">Navigation</a></li>
-                            <li><a href="{% url 'detailing' %}" class="lime-text accent-1">Detailing</a></li>
-                            <li><a href="{% url 'contact' %}" class="lime-text accent-1">Contact</a></li>
-                        </ul>
-                    </div>
-                </nav>
+                            <ul class="right hide-on-med-and-down">
+                                <li><a href="{% url 'gallery' %}" class="black-text">Projects</a></li>
+                                <li><a href="{% url 'systems' %}" class="black-text">Systems</a></li>
+                                <li><a href="{% url 'security' %}" class="black-text">Security</a></li>
+                                <li><a href="{% url 'remote-start' %}" class="black-text">Remote&nbspStart</a></li>
+                                <li><a href="{% url 'nav-systems' %}" class="black-text">Navigation</a></li>
+                                <li><a href="{% url 'detailing' %}" class="black-text">Detailing</a></li>
+                                <li><a href="{% url 'contact' %}" class="black-text">Contact</a></li>
+                            </ul>
+                            <ul class="side-nav black" id="mobile-demo">
+                                <li><a href="{% url 'gallery' %}" class="lime-text accent-1">Projects</a></li>
+                                <li><a href="{% url 'systems' %}" class="lime-text accent-1">Systems</a></li>
+                                <li><a href="{% url 'security' %}" class="lime-text accent-1">Security</a></li>
+                                <li><a href="{% url 'remote-start' %}" class="lime-text accent-1">Remote&nbspStart</a>
+                                </li>
+                                <li><a href="{% url 'nav-systems' %}" class="lime-text accent-1">Navigation</a></li>
+                                <li><a href="{% url 'detailing' %}" class="lime-text accent-1">Detailing</a></li>
+                                <li><a href="{% url 'contact' %}" class="lime-text accent-1">Contact</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container">
+        <div class="container">
 
 
-
-        <a id="flip" id="appointment-btn" class="waves-effect btn pulse z-depth-5">Make an Appointment</a>
-        <div id="panel">
+            <a id="flip" id="appointment-btn" class="waves-effect btn pulse z-depth-5">Make an Appointment</a>
+            <div id="panel">
 
                 {% include "contact_form.html" %}
 
+            </div>
         </div>
-    </div>
 
-</div>
+    </div>
 
 
 
@@ -139,21 +153,18 @@
 
 
 
-    <footer class="container">
+    <footer class="foot container">
 
-        </div>
         <hr>
         <div class="row">
-            <div class="col l3">
+            <div class="col l4 center-align">
                 <a class="lime-text" href="#">Team</a>
             </div>
-            <div class="col l3">
-                <a class="lime-text" href="#">Locations</a>
-            </div>
-            <div class="col l3">
+
+            <div class="col l4 center-align">
                 <a class="lime-text" href="#">Privacy</a>
             </div>
-            <div class="col l3">
+            <div class="col l4 center-align">
                 <a class="lime-text" href="#">Terms</a>
             </div>
 
@@ -163,20 +174,6 @@
 
 
     </footer>
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-
-
-
-
-
-
-
-
-
 
 {% endblock footer %}
 <script type="text/javascript">
@@ -189,12 +186,10 @@
         $("#flip").click(function () {
             $("#panel").slideToggle();
         });
-              $('.parallax').parallax();
+        $('.parallax').parallax();
 
 
-
-
-  })
+    })
 
 
 </script>

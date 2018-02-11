@@ -45,27 +45,6 @@ body {
 }
 
 
-// Class for when element is above threshold
-.pin-top {
-position: relative;
-}
-
-// Class for when element is below threshold
-.pin-bottom {
-position: relative;
-}
-
-// Class for when element is pinned
-.pinned {
-position: fixed !important;
-  }
-
-   /* The sticky class is added to the navbar with JS when it reaches its scroll position */
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%
-}
 
 .btn{
     width:100% !important;
@@ -83,4 +62,8 @@ position: fixed !important;
     }
 li{
     font-weight: bold;
+}
+
+.foot{
+    background-color:black;
 }
