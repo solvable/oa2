@@ -101,10 +101,12 @@
                                 <li><a href="{% url 'contact' %}" class="black-text">Contact</a></li>
                             </ul>
                             <ul class="side-nav black" id="mobile-demo">
+                                <li><a href="{% url 'index' %}" class="lime-text accent-1">Home</a></a></li>
                                 <li><a href="{% url 'gallery' %}" class="lime-text accent-1">Projects</a></li>
                                 <li><a href="{% url 'systems' %}" class="lime-text accent-1">Systems</a></li>
                                 <li><a href="{% url 'security' %}" class="lime-text accent-1">Security</a></li>
-                                <li><a href="{% url 'remote-start' %}" class="lime-text accent-1">Remote&nbspStart</a></li>
+                                <li><a href="{% url 'remote-start' %}" class="lime-text accent-1">Remote&nbspStart</a>
+                                </li>
                                 <li><a href="{% url 'nav-systems' %}" class="lime-text accent-1">Navigation</a></li>
                                 <li><a href="{% url 'detailing' %}" class="lime-text accent-1">Detailing</a></li>
                                 <li><a href="{% url 'contact' %}" class="lime-text accent-1">Contact</a></li>
@@ -160,26 +162,24 @@
         <div class="row">
 
 
+            <div class="col l4 center-align" style="font-size:3em; color:#a2c529">
+                <a href="https://www.facebook.com/OxaudioPhilly/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                <a href="https://twitter.com/OxAudio" target="_blank"><i class="fab fa-twitter-square"></i></a>
+                <a href="https://www.instagram.com/oxaudio/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://plus.google.com/+OxaudioPhilly" target="_blank"><i
+                        class="fab fa-google-plus-square"></i></a>
+            </div>
 
 
+            <div class="col l4 center-align
+        " style="font-size:3em; color:#a2c529">
+                <a href="tel:267-225-8863"><i class="fas fa-phone-square"></i></a>
+                <a href="mailto:info@oxaudio.com"><i class="fas fa-envelope-square"></i></a>
+            </div>
 
             <div class="col l4 center-align" style="font-size:3em; color:#a2c529">
-            <a href="https://www.facebook.com/OxaudioPhilly/" target="_blank"><i class="fab fa-facebook-square"></i></a>
-            <a href="https://twitter.com/OxAudio" target="_blank"><i class="fab fa-twitter-square"></i></a>
-            <a href="https://www.instagram.com/oxaudio/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://plus.google.com/+OxaudioPhilly" target="_blank"><i class="fab fa-google-plus-square"></i></a>
-        </div>
-
-
-        <div class="col l4 center-align
-        " style="font-size:3em; color:#a2c529">
-        <a href="tel:267-225-8863"><i class="fas fa-phone-square"></i></a>
-        <a href="mailto:info@oxaudio.com"><i class="fas fa-envelope-square"></i></a>
-        </div>
-
-        <div class="col l4 center-align" style="font-size:3em; color:#a2c529">
-            <a href="{% url 'privacy' %}" target="_blank"><i class="fas fa-user-secret"></i></a>
-        </div>
+                <a href="{% url 'privacy' %}" target="_blank"><i class="fas fa-user-secret"></i></a>
+            </div>
 
 
         </div>

@@ -1,91 +1,91 @@
+
 body {
     /*background-color:#444444;*/
     background-color: white;
 
-
 }
 
-a{
-    color:#a2c529 !important;
+a {
+    color: #a2c529 !important;
+}
+
+#navvy > div:nth-child(1) > div > div > nav > div > a.button-collapse > i {
+    color: black !important;
+    padding-left: 20px;
+    padding-right: 20px;
+    /*border:#a0a0a0 solid !important;*/
+    z-index: 5;
 }
 
 .header-img {
     background-color: black;
 
 }
-.fab{
-    color:#a2c529 !important;
-}
-/* The sticky class is added to the navbar with JS when it reaches its scroll position */
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%
+
+.fab {
+    color: #a2c529 !important;
 }
 
-#flip{
-
+#flip {
+    background-color: #afd42b
 }
-
 
 #panel, #flip {
     padding: 5px;
     text-align: center;
-    background-color: greenyellow;
-    border: solid 1px #c3c3c3;
+    background-color: #afd42b;
+    border: solid 1px #afd42b;
 }
 
 #panel {
     padding: 50px;
     display: none;
 }
-#panel > form > p > label{
+
+#panel > form > p > label {
     color: black;
 }
-#panel > form > p > input{
-    color:black;
+
+#panel > form > p > input {
+    color: black;
     background-color: white;
 }
 
-#panel > form > p > textarea{
-    color:black;
+#panel > form > p > textarea {
+    color: black;
     background-color: white;
 }
 
-
-
-.btn{
-    width:100% !important;
-    color:black !important;
-    background-color: greenyellow !important;
+.btn {
+    width: 100% !important;
+    color: black !important;
+    background-color: #afd42b !important;
 }
 
-.nav-wrapper{
+.nav-wrapper {
     background-color: yellowgreen !important;
 }
 
+.parallax-container {
+    height: 300px !important;
+}
 
-    .parallax-container {
-      height: 300px !important;
-    }
-li{
+li {
     font-weight: bold;
 }
 
-.bold-text{
-    font-weight:bold !important;
+.bold-text {
+    font-weight: bold !important;
 }
 
-
-
-.foot{
-    background-color:black;
+.foot {
+    background-color: black;
 }
 
-.messages{
+.messages {
     position: absolute;
     background-color: white;
-    border-radius:10px;
-    padding:10px;
+    border-radius: 10px;
+    padding: 10px;
 
 }
