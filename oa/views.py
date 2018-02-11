@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse, redirect
+from django.shortcuts import render, HttpResponse, redirect, HttpResponseRedirect
 from django.http import request
 from django.views import generic
 from django.views.generic.base import TemplateView, ContextMixin
@@ -24,43 +24,30 @@ class ContactMixin(FormMixin):
     success_url = 'index'
 
 
-    def form_valid(self, form):
-        contact_name = request.POST.get('contact_name', '')
-        contact_email = request.POST.get('contact_email', '')
-        form_message = request.POST.get('message', '')
-
-
-        send_mail(
-            subject = "New Appointment Request",
-            message = contact_name+ "said: " + form_message,
-            from_email = contact_email,
-            recipient_list = ['info@oxaudio.com'],
-            fail_silently=False
-        )
-
-
-    def form_valid(self, form):
-        message = "{name} / {email} said: ".format(
-            name=form.cleaned_data.get('name'),
-            email=form.cleaned_data.get('email'))
-        message += "\n\n{0}".format(form.cleaned_data.get('message'))
-        send_mail(
-            subject=form.cleaned_data.get('subject').strip(),
-            message=message,
-            from_email='contact-form@myapp.com',
-            recipient_list=[settings.LIST_OF_EMAIL_RECIPIENTS],
-        )
-        return super(ContactFormView, self).form_valid(form)
 
 
     def post(self, request, *args, **kwargs):
-        context = self.get_context_data()
-        if context["form"].is_valid():
-            print('yes done')
-            # save your model
-            # redirect
+        subject = request.POST.get('contact_name', '')
+        from_email = request.POST.get('contact_email', '')
+        message = request.POST.get('message', '')
+        #next = request.POST.get('next', '/')
 
-        return super(TemplateView, self).render_to_response(context)
+        if subject and message and from_email:
+            try:
+                send_mail(subject, message, from_email, ['info@oxaudio.com'], fail_silently=False)
+                print("success")
+            except BadHeaderError:
+                return HttpResponse('Invalid header found.')
+
+        else:
+            # In reality we'd use a form class
+            # to get proper validation errors.
+            return HttpResponse('Make sure all fields are entered and valid.')
+
+        #return HttpResponse('Success! Thank you for your message.')
+        #return HttpResponseRedirect(next)
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+
 
 class IndexView(ContactMixin, generic.TemplateView):
     template_name = 'index.html'
@@ -86,7 +73,7 @@ class GalleryView(ContactMixin, generic.ListView):
 
 
 class SystemView(ContactMixin, generic.TemplateView):
-    template_name = 'speakers.html'
+    template_name = 'systems.html'
 
 
 class SecurityView(ContactMixin, generic.TemplateView):

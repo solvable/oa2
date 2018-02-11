@@ -1,6 +1,6 @@
 body {
     /*background-color:#444444;*/
-    background-color: dimgray;
+    background-color: white;
 }
 
 .header-img {
@@ -23,7 +23,7 @@ body {
 #panel, #flip {
     padding: 5px;
     text-align: center;
-    background-color: #a2c529;
+    background-color: greenyellow;
     border: solid 1px #c3c3c3;
 }
 
@@ -65,4 +65,22 @@ position: fixed !important;
   position: fixed;
   top: 0;
   width: 100%
+}
+
+.btn{
+    width:100% !important;
+    color:black !important;
+    background-color: greenyellow !important;
+}
+
+.nav-wrapper{
+    background-color: yellowgreen !important;
+}
+
+
+    .parallax-container {
+      height: 300px !important;
+    }
+li{
+    font-weight: bold;
 }
