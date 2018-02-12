@@ -112,5 +112,7 @@ position: relative;
 /* Class for when element is pinned*/
 .pinned {
 position: fixed !important;
-    width: 70%
+width: 100%;
+    padding-right: 30%;
 }
+
