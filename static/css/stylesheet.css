@@ -9,6 +9,15 @@ a {
     color: #a2c529 !important;
 }
 
+.navbar{
+    z-index: 10 !important;
+
+}
+
+body > div:nth-child(1) > div > nav > div > a > i{
+    color:black;
+}
+
 #navvy > div:nth-child(1) > div > div > nav > div > a.button-collapse > i {
     color: black !important;
     padding-left: 20px;
@@ -88,4 +97,20 @@ li {
     border-radius: 10px;
     padding: 10px;
 
+}
+
+/*Class for when element is above threshold,*/
+    .pin-top {
+position: fixed relative;
+}
+
+/* Class for when element is below threshold*/
+.pin-bottom {
+position: relative;
+}
+
+/* Class for when element is pinned*/
+.pinned {
+position: fixed !important;
+    width: 70%
 }

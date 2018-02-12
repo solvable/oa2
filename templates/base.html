@@ -79,19 +79,14 @@
                                      id="header-img" class=" z-depth-5 header-img responsive-img"></a>
 
 
-</div>
 {% block nav %}
-    <div id="navvy">
-        <div class="container">
-            <div class="navbar">
-                <div class="nav">
+
+                <div class="navbar">
                     <nav>
                         <div class="nav-wrapper">
-                            <a href="#!" class="brand-logo"></a>
-                            <a href="#" data-activates="mobile-demo" class="button-collapse"><i
-                                    class="material-icons">menu</i></a>
+                            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 
-                            <ul class="right hide-on-med-and-down">
+                            <ul class="left hide-on-med-and-down">
                                 <li><a href="{% url 'gallery' %}" class="black-text">Projects</a></li>
                                 <li><a href="{% url 'systems' %}" class="black-text">Systems</a></li>
                                 <li><a href="{% url 'security' %}" class="black-text">Security</a></li>
@@ -113,10 +108,7 @@
                             </ul>
                         </div>
                     </nav>
-                </div>
-            </div>
-        </div>
-        <div class="container">
+
 
 
             <a id="flip" id="appointment-btn" class="waves-effect btn pulse z-depth-5 bold-text">Make an Appointment</a>
@@ -125,12 +117,8 @@
                 {% include "contact_form.html" %}
 
             </div>
-        </div>
-
-    </div>
-
-
-
+</div>
+</div>
 
 
 
@@ -202,6 +190,7 @@
         });
         $('.parallax').parallax();
         $('.messages').delay(3200).fadeOut(300);
+        $('.navbar').pushpin({top: $('.navbar').offset().top});
 
 
     })
