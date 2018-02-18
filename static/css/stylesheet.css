@@ -5,19 +5,38 @@ body {
 
 }
 
+.content{
+    padding:16px;
+}
+
+
+
+
+
 a {
     color: #a2c529 !important;
 }
 
-.navbar{
-    z-index: 10 !important;
+
+
+.header-img {
+    background-color: black;
 
 }
+
+
+
+
 
 body > div:nth-child(1) > div > nav > div > a > i{
     color:black;
 }
 
+
+.navbar{
+    z-index: 10 !important;
+
+}
 #navvy > div:nth-child(1) > div > div > nav > div > a.button-collapse > i {
     color: black !important;
     padding-left: 20px;
@@ -26,10 +45,11 @@ body > div:nth-child(1) > div > nav > div > a > i{
     z-index: 5;
 }
 
-.header-img {
-    background-color: black;
 
-}
+
+
+
+
 
 .fab {
     color: #a2c529 !important;
@@ -112,7 +132,9 @@ position: relative;
 /* Class for when element is pinned*/
 .pinned {
 position: fixed !important;
-width: 100%;
-    padding-right: 30%;
+top:0;
 }
 
+.pinned + .content {
+    padding-top:60px;
+}

@@ -17,7 +17,7 @@ class Project(models.Model):
     modified = models.DateTimeField(auto_now=True, auto_now_add=False)
     featuredImage = models.ImageField(upload_to='photos/%Y/%m/%d', default='/static/img/project.jpg')
     thumbImage = models.ImageField(upload_to='photos/%Y/%m/%d', default='/static/img/project.jpg', blank=True)
-
+    alt_text = models.CharField(max_length=50, default="")
     slug = models.SlugField(max_length=50, blank=True)
 
 
@@ -47,4 +47,5 @@ class ProjectImages(models.Model):
 
     project = models.ForeignKey(Project, related_name='images', on_delete="CASCADE")
     image = models.ImageField(upload_to='photos/%Y/%m/%d')
+    alt_text = models.CharField(max_length=50, default="")
     isFeatured = models.BooleanField(default=False)
