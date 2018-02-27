@@ -7,3 +7,4 @@ class ContactForm(forms.Form):
         required=True,
         widget=forms.Textarea
     )
+    phone_number = forms.CharField(required=False)

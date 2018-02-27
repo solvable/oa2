@@ -31,10 +31,13 @@ class ContactMixin(FormMixin):
         subject = request.POST.get('contact_name', '')
         from_email = request.POST.get('contact_email', '')
         message = request.POST.get('message', '')
-        #next = request.POST.get('next', '/')
+        phone_number = request.POST.get('phone_number',"")
 
         if subject and message and from_email:
             try:
+                if phone_number:
+                    message = "Dear Oxaudio"+"\n" + "FROM: "+subject+ "\n"+ "PHONE NUMBER: " + phone_number +'\n'+message
+
                 send_mail(subject, message, from_email, ['info@oxaudio.com'], fail_silently=False)
                 print("success")
                 messages.add_message(request, messages.INFO, 'Thanks for contacting us, we will be in touch shortly!.')
@@ -89,6 +92,8 @@ class NavSystemView(ContactMixin, generic.TemplateView):
 class DetailingView(ContactMixin, generic.TemplateView):
     template_name='detailing.html'
 
+class TintView(ContactMixin, generic.TemplateView):
+    template_name = 'tint.html'
 
 class ContactView(ContactMixin, generic.TemplateView):
     template_name = 'contact.html'

@@ -22,7 +22,7 @@ from oa.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index/', IndexView.as_view(),name="index"),
+    path('', IndexView.as_view(),name="index"),
     path('gallery/', GalleryView.as_view(),name="gallery"),
     path('gallery/<proj>', ProjectView.as_view(), name="project"),
     path('systems/', SystemView.as_view(), name='systems'),
@@ -30,6 +30,7 @@ urlpatterns = [
     path('remote_start/', RemoteStartView.as_view(), name='remote-start'),
     path('nav_systems/', NavSystemView.as_view(), name='nav-systems'),
     path('detailing/', DetailingView.as_view(), name='detailing'),
+    path('tint/', TintView.as_view(), name ='tint'),
     path('contact/', ContactView.as_view(), name='contact'),
     path('privacy/', PrivacyView.as_view(), name='privacy')
 ]

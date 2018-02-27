@@ -10,28 +10,18 @@ body {
 }
 
 
-
-
-
 a {
     color: #a2c529 !important;
 }
 
-
-
 .header-img {
-    background-color: black;
+    background-color: #090909;
 
 }
-
-
-
-
 
 body > div:nth-child(1) > div > nav > div > a > i{
     color:black;
 }
-
 
 .navbar{
     z-index: 10 !important;
@@ -96,7 +86,7 @@ body > div:nth-child(1) > div > nav > div > a > i{
 }
 
 .parallax-container {
-    height: 300px !important;
+    height: 600px !important;
 }
 
 li {
@@ -138,3 +128,4 @@ top:0;
 .pinned + .content {
     padding-top:60px;
 }
+
