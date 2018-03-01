@@ -25,16 +25,22 @@ body > div:nth-child(1) > div > nav > div > a > i{
 
 .navbar{
     z-index: 10 !important;
-
-}
-#navvy > div:nth-child(1) > div > div > nav > div > a.button-collapse > i {
-    color: black !important;
-    padding-left: 20px;
-    padding-right: 20px;
-    /*border:#a0a0a0 solid !important;*/
-    z-index: 5;
+    overflow: hidden !important;
+    position: fixed !important; /* Set the navbar to fixed position */
+    top: 0 !important; /* Position the navbar at the top of the page */
+    width: 100% !important; /* Full width */
 }
 
+
+
+
+/*#navvy > div:nth-child(1) > div > div > nav > div > a.button-collapse > i {*/
+    /*color: black !important;*/
+    /*padding-left: 20px;*/
+    /*padding-right: 20px;*/
+    /*!*border:#a0a0a0 solid !important;*!*/
+    /*z-index: 5;*/
+/*}*/
 
 
 
@@ -45,18 +51,18 @@ body > div:nth-child(1) > div > nav > div > a > i{
     color: #a2c529 !important;
 }
 
-#flip {
+#flip, #menuflip {
     background-color: #afd42b
 }
 
-#panel, #flip {
+#panel, #flip, #menu, #menuflip {
     padding: 5px;
     text-align: center;
     background-color: #afd42b;
     border: solid 1px #afd42b;
 }
 
-#panel {
+#panel , #menu{
     padding: 50px;
     display: none;
 }
