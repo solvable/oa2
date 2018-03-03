@@ -55,12 +55,23 @@ body > div:nth-child(1) > div > nav > div > a > i{
     background-color: #afd42b
 }
 
-#panel, #flip, #menu, #menuflip {
+#panel, #flip{
     padding: 5px;
     text-align: center;
     background-color: #afd42b;
     border: solid 1px #afd42b;
 }
+
+
+ #menu, #menuflip {
+    padding: 5px;
+    text-align: center;
+
+    border: solid 1px #afd42b;
+}
+
+
+
 
 #panel , #menu{
     padding: 50px;
@@ -103,6 +114,48 @@ li {
     font-weight: bold !important;
 }
 
+.menu-text {
+    font-weight: bold !important;
+    font-size:3vw;
+    margin-top:10px;
+}
+
+#menu{
+    padding:0;
+        background: #afd42b;
+
+}
+
+.menu-item{
+        background: #afd42b;
+
+}
+.menu-item:hover {
+    background-color:#a2c529;
+
+}
+
+table{
+    /*border-collapse:collapse;*/
+    border:transparent;
+}
+
+table td{
+    width:33vw;
+    vertical-align: center;
+    text-align: center;
+    background-color:#afd42b;
+
+
+    background-clip: padding-box; /* this has been added */
+
+}
+
+td a{
+    display: block;
+    text-align:center;
+    font-weight: bold;
+}
 .foot {
     background-color: black;
 }

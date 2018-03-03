@@ -79,7 +79,7 @@
 
     {% block nav %}
 
-<div class="container">
+        <div class="container">
 
             <a id="flip" class="waves-effect btn pulse z-depth-5 bold-text">Make an Appointment</a>
             <div id="panel">
@@ -87,46 +87,67 @@
             </div>
 
             <a id="menuflip" id="menu-btn" class="waves-effect btn z-depth-5 bold-text">Menu</a>
-            <div id="menu">
+
+{#            <div id="menu" style="overflow-x:auto;">#}
+{#                <table>#}
+{##}
+{#                    <tr>#}
+{#                        <td class="col s4 menu-item"><a href="{% url 'index' %}" class="black-text menu-text"><img src="{% static "img/home.png" %}"></a></td>#}
+{#                        <td class="col s4 menu-item"><a href="{% url 'gallery' %}" class="black-text menu-text"><img src="{% static "img/gallery.png" %}"></a></td>#}
+{#                        <td class="col s4 menu-item"><a href="{% url 'systems' %}" class="black-text menu-text"><img src="{% static "img/systems.png" %}"></a></td>#}
+{#                    </tr>#}
+{#                    <tr>#}
+{#                        <td class="col s4 menu-item"><a href="{% url 'security' %}" class="black-text menu-text"><img src="{% static "img/security.png" %}"></a></td>#}
+{#                        <td class="col s4 menu-item"><a href="{% url 'remote-start' %}" class="black-text menu-text"><img src="{% static "img/remote_start.png" %}"></a></td>#}
+{#                        <td class="col s4 menu-item"><a href="{% url 'nav-systems' %}" class="black-text menu-text"><img src="{% static "img/nav.png" %}"></a></td>#}
+{#                    </tr>#}
+{#                    <tr>#}
+{#                        <td class="col s4 menu-item"><a href="{% url 'detailing' %}" class="black-text menu-text"><img src="{% static "img/detailing.png" %}"></a></td>#}
+{#                        <td class="col s4 menu-item"><a href="{% url 'tint' %}" class="black-text menu-text"><img src="{% static "img/tint.png" %}"></a></td>#}
+{#                        <td class="col s4 menu-item"><a href="{% url 'contact' %}" class="black-text menu-text"><img src="{% static "img/contact.png" %}"></a></td>#}
+{#                    </tr>#}
+{##}
+{#                </table>#}
+{#            </div>#}
+<div id="menu" style="overflow-x:auto;">
+
+                        <div class="row">
+                            <div class="col s4 menu-item"><a href="{% url 'index' %}" class="black-text menu-text"><img src="{% static "img/home.png" %}" class="responsive-img"></a></div>
+                            <div class="col s4 menu-item"><a href="{% url 'gallery' %}" class="black-text menu-text"><img src="{% static "img/gallery.png" %}" class="responsive-img"></a></div>
+                            <div class="col s4 menu-item"><a href="{% url 'systems' %}" class="black-text menu-text"><img src="{% static "img/systems.png" %}" class="responsive-img"></a></div>
+                        </div>
+                        <div class="row">
+                            <div class="col s4 menu-item"><a href="{% url 'security' %}" class="black-text menu-text"><img src="{% static "img/security.png" %}" class="responsive-img"></a></div>
+                            <div class="col s4 menu-item"><a href="{% url 'remote-start' %}" class="black-text menu-text"><img src="{% static "img/remote_start.png" %}" class="responsive-img"></a></div>
+                            <div class="col s4 menu-item"><a href="{% url 'nav-systems' %}" class="black-text menu-text"><img src="{% static "img/nav.png" %}" class="responsive-img"></a></div>
+                        </div>
+                        <div class="row">
+                            <div class="col s4 menu-item"><a href="{% url 'detailing' %}" class="black-text menu-text"><img src="{% static "img/detailing.png" %}" class="responsive-img"></a></div>
+                            <div class="col s4 menu-item"><a href="{% url 'tint' %}" class="black-text menu-text"><img src="{% static "img/tint.png" %}" class="responsive-img"></a></div>
+                            <div class="col s4 menu-item"><a href="{% url 'contact' %}" class="black-text menu-text"><img src="{% static "img/contact.png" %}" class="responsive-img"></a></div>
+                        </div>
 
 
-                    <div class="col s4"><a href="{% url 'index' %}" class="black-text">Home</a></div>
-                    <div class="col s4"><a href="{% url 'gallery' %}" class="black-text">Projects</a></div>
-                    <div class="col s4"><a href="{% url 'systems' %}" class="black-text">Systems</a></div>
-                    <div class="col s4"><a href="{% url 'security' %}" class="black-text">Security</a></div>
-                    <div class="col s4"><a href="{% url 'remote-start' %}" class="black-text">Remote&nbspStart</a></div>
-                    <div class="col s4"><a href="{% url 'nav-systems' %}" class="black-text">Navigation</a></div>
-                    <div class="col s4"><a href="{% url 'detailing' %}" class="black-text">Detailing</a></div>
-                    <div class="col s4"><a href="{% url 'tint' %}" class="black-text">Tint</a></div>
-                    <div class="col s4"><a href="{% url 'contact' %}" class="black-text">Contact</a></div>
-
-            </div>
-
-</div>
 
 
+
+
+
+
+
+
+
+
+
+        </div>
     {% endblock nav %}
 
     {% block content %}
 
-<div class="container">
-        <a href="{% url 'index' %}"><img src="{% static "img/banner-trans.png" %}"
-                                         id="header-img" class=" z-depth-5 header-img responsive-img"></a>
-</div>
+        <div class="container">
+            <a href="{% url 'index' %}"><img src="{% static "img/banner-trans.png" %}"id="header-img" class=" z-depth-5 header-img responsive-img"></a>
+        </div>
     {% endblock content %}
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     {% block footer %}
@@ -138,26 +159,40 @@
             <div class="row">
 
 
-                <div class="col l4 center-align" style="font-size:3em; color:#a2c529">
+                <div class="col s2 center-align" style="font-size:3em; color:#a2c529">
                     <a href="https://www.facebook.com/OxaudioPhilly/" target="_blank"><i
                             class="fab fa-facebook-square"></i></a>
+                </div>
+                <div class="col s2 center-align" style="font-size:3em; color:#a2c529">
+
                     <a href="https://twitter.com/OxAudio" target="_blank"><i class="fab fa-twitter-square"></i></a>
+                </div>
+                <div class="col s2 center-align" style="font-size:3em; color:#a2c529">
+
                     <a href="https://www.instagram.com/oxaudio/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="col s2 center-align" style="font-size:3em; color:#a2c529">
+
                     <a href="https://plus.google.com/+OxaudioPhilly" target="_blank"><i
                             class="fab fa-google-plus-square"></i></a>
                 </div>
 
 
-                <div class="col l4 center-align
-        " style="font-size:3em; color:#a2c529">
+                <div class="col s2 center-align" style="font-size:3em; color:#a2c529">
                     <a href="tel:267-225-8863"><i class="fas fa-phone-square"></i></a>
+                </div>
+                <div class="col s2 center-align" style="font-size:3em; color:#a2c529">
+
                     <a href="mailto:info@oxaudio.com"><i class="fas fa-envelope-square"></i></a>
                 </div>
 
-                <div class="col l4 center-align" style="font-size:3em; color:#a2c529">
-                    <a href="{% url 'privacy' %}" target="_blank"><i class="fas fa-user-secret"></i></a>
+                <div class="col s4 left-align" style="font-size:1em; color:#a2c529">
+                    <a href="{% url 'privacy' %}" target="_blank">Privacy Policy</a>
                 </div>
-
+                <div class="col s8 right-align" style="font-size:1em; color:#a2c529">
+                         <i class="large material-icons" style="font-size:1em; color:#a2c529">copyright</i>
+ 2018 OxAudio inc.
+                </div>
 
             </div>
 
