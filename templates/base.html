@@ -78,8 +78,12 @@
 
 
     {% block nav %}
-
-        <div class="container sticky">
+        <div class="container">
+            <a href="{% url 'index' %}"><img src="{% static "img/banner-trans.png" %}" id="header-img"
+                                             class=" z-depth-5 header-img responsive-img"></a>
+        </div>
+        <div class="menu">
+        <div class="container">
 
             <div class="row">
                 <div class="col s6">
@@ -88,7 +92,7 @@
                 <div class="col s6">
                     <a id="flip" class="waves-effect btn z-depth-5 bold-text">Appointments</a>
                 </div>
-            </div>
+         </div>
 
         <div id="menu">
 
@@ -114,15 +118,11 @@
 
         </div>
         </div>
+        </div>
     {% endblock nav %}
 
     {% block content %}
-    <div class="content">
-        <div class="container">
-            <a href="{% url 'index' %}"><img src="{% static "img/banner-trans.png" %}" id="header-img"
-                                             class=" z-depth-5 header-img responsive-img"></a>
-        </div>
-        </div>
+
     {% endblock content %}
 
 
@@ -193,7 +193,6 @@
             $("#menuflip").click(function () {
                 $("#menu").slideToggle();
             });
-
         })
 
 

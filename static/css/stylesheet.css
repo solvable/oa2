@@ -158,6 +158,7 @@ td a{
 }
 .foot {
     background-color: black;
+    
 }
 
 .messages {
@@ -188,11 +189,16 @@ top:0;
     padding-top:60px;
 }
 
-.sticky{
-    position:fixed;
-    left:50%;
-    transform:translateX(-50%);
-    width:100%;
+
+
+
+.menu{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    /*left:50%;*/
+    /*transform:translateX(-50%);*/
+    /*width:100%;*/
     z-index: 10;
     margin-bottom:10px;
     padding-bottom:10px;
@@ -202,3 +208,7 @@ top:0;
   padding-top: 40px;
 }
 
+.main-nav,
+.main {
+  position: relative;
+}
