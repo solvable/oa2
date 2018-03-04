@@ -188,3 +188,17 @@ top:0;
     padding-top:60px;
 }
 
+.sticky{
+    position:fixed;
+    left:50%;
+    transform:translateX(-50%);
+    width:100%;
+    z-index: 10;
+    margin-bottom:10px;
+    padding-bottom:10px;
+}
+
+.sticky + .content {
+  padding-top: 40px;
+}
+
