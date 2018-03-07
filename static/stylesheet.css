@@ -1,0 +1,186 @@
+
+body {
+    /*background-color:#444444;*/
+    background-color: white;
+
+}
+
+.content{
+    padding:16px;
+}
+
+
+a {
+    color: #a2c529 !important;
+}
+
+.header-img {
+    background-color: #090909;
+
+}
+
+body > div:nth-child(1) > div > nav > div > a > i{
+    color:black;
+}
+
+.navbar{
+    z-index: 10 !important;
+    overflow: hidden !important;
+    position: fixed !important; /* Set the navbar to fixed position */
+    top: 0 !important; /* Position the navbar at the top of the page */
+    width: 100% !important; /* Full width */
+}
+
+
+
+
+/*#navvy > div:nth-child(1) > div > div > nav > div > a.button-collapse > i {*/
+    /*color: black !important;*/
+    /*padding-left: 20px;*/
+    /*padding-right: 20px;*/
+    /*!*border:#a0a0a0 solid !important;*!*/
+    /*z-index: 5;*/
+/*}*/
+
+
+
+
+
+
+.fab {
+    color: #a2c529 !important;
+}
+
+#flip, #menuflip {
+    background-color: #afd42b
+}
+
+#panel, #flip{
+    padding: 5px;
+    text-align: center;
+    background-color: #afd42b;
+    border: solid 1px #afd42b;
+}
+
+
+ #menu, #menuflip {
+    padding: 5px;
+    text-align: center;
+
+    border: solid 1px #afd42b;
+}
+
+
+
+
+#panel , #menu{
+    padding: 50px;
+    display: none;
+}
+
+#panel > form > p > label {
+    color: black;
+}
+
+#panel > form > p > input {
+    color: black;
+    background-color: white;
+}
+
+#panel > form > p > textarea {
+    color: black;
+    background-color: white;
+}
+
+.btn {
+    width: 100% !important;
+    color: black !important;
+    background-color: #afd42b !important;
+}
+
+.nav-wrapper {
+    background-color: yellowgreen !important;
+}
+
+.parallax-container {
+    height: 600px !important;
+}
+
+li {
+    font-weight: bold;
+}
+
+.bold-text {
+    font-weight: bold !important;
+}
+
+.menu-text {
+    font-weight: bold !important;
+    font-size:3vw;
+    margin-top:10px;
+}
+
+#menu{
+    padding:0;
+}
+
+
+.menu-item:hover {
+    background-color:#a2c529;
+
+
+}
+
+table{
+    /*border-collapse:collapse;*/
+    border:transparent;
+}
+
+table td{
+    width:33vw;
+    vertical-align: center;
+    text-align: center;
+    background-color:#afd42b;
+
+
+    background-clip: padding-box; /* this has been added */
+
+}
+
+td a{
+    display: block;
+    text-align:center;
+    font-weight: bold;
+}
+.foot {
+    background-color: black;
+}
+
+.messages {
+    position: absolute;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+
+}
+
+/*Class for when element is above threshold,*/
+    .pin-top {
+position: fixed relative;
+}
+
+/* Class for when element is below threshold*/
+.pin-bottom {
+position: relative;
+}
+
+/* Class for when element is pinned*/
+.pinned {
+position: fixed !important;
+top:0;
+}
+
+.pinned + .content {
+    padding-top:60px;
+}
+

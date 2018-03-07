@@ -6,13 +6,9 @@ from django.views.generic.edit import FormMixin
 from django.shortcuts import get_object_or_404
 from .models import Project, ProjectImages
 from .forms import ContactForm
-from django.core.mail import send_mail
-from django.core.mail import EmailMessage
+from django.core.mail import send_mail, BadHeaderError, EmailMessage
 from django.contrib import messages
-from django.shortcuts import redirect
-from django.template import Context
-from django.template.loader import get_template
-
+from django.urls import reverse
 
 
 
@@ -24,40 +20,67 @@ class ContactMixin(FormMixin):
     form_class = ContactForm
     success_url = 'index'
 
+    def get_success_url(self):
+        return reverse('index')
 
-
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = self.get_form()
+        return context
 
     def post(self, request, *args, **kwargs):
-        subject = request.POST.get('contact_name', '')
-        from_email = request.POST.get('contact_email', '')
-        message = request.POST.get('message', '')
-        phone_number = request.POST.get('phone_number',"")
+        form = self.get_form()
+        if form.is_valid():
+            subject = request.POST.get('contact_name', '')
+            from_email = request.POST.get('contact_email', '')
+            message = request.POST.get('message', '')
+            phone_number = request.POST.get('phone_number',"")
+            email_content = "Dear Oxaudio"+"\n" + "FROM: "+subject+ "\n"+ "PHONE NUMBER: " + phone_number +'\n'+message
 
-        if subject and message and from_email:
             try:
-                if phone_number:
-                    message = "Dear Oxaudio"+"\n" + "FROM: "+subject+ "\n"+ "PHONE NUMBER: " + phone_number +'\n'+message
-
-                send_mail(subject, message, from_email, ['info@oxaudio.com'], fail_silently=False)
-                print("success")
+                send_mail(subject, email_content, from_email, ['ryan@oxaudio.com'], fail_silently=False)
                 messages.add_message(request, messages.INFO, 'Thanks for contacting us, we will be in touch shortly!.')
+                print("success")
 
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
 
+            return self.form_valid(form)
         else:
-            # In reality we'd use a form class
-            # to get proper validation errors.
-            return HttpResponse('Make sure all fields are entered and valid.')
+            return self.form_invalid(form)
 
-        return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+    def form_valid(self, form):
+        # Here, we would record the user's interest using the message
+        # passed in form.cleaned_data['message']
+        return super().form_valid(form)
+
+
+
+    # def post(self, request, *args, **kwargs):
+
+    #     subject = request.POST.get('contact_name', '')
+    #     from_email = request.POST.get('contact_email', '')
+    #     message = request.POST.get('message', '')
+    #     phone_number = request.POST.get('phone_number',"")
+    #     email_content = "Dear Oxaudio"+"\n" + "FROM: "+subject+ "\n"+ "PHONE NUMBER: " + phone_number +'\n'+message
+
+    #     try:
+    #         send_mail(subject, email_content, from_email, ['ryan@oxaudio.com'], fail_silently=False)
+    #         messages.add_message(request, messages.INFO, 'Thanks for contacting us, we will be in touch shortly!.')
+    #         print("success")
+
+    #     except BadHeaderError:
+    #         return HttpResponse('Invalid header found.')
+
+
+    #     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
 
 class IndexView(ContactMixin, generic.TemplateView):
     template_name = 'index.html'
 
 
-class ProjectView(generic.DetailView):
+class ProjectView(ContactMixin, generic.DetailView):
     model = Project
     template_name = 'project.html'
     slug_url_kwarg = "proj"

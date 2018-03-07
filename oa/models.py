@@ -7,7 +7,7 @@ import os
 
 class Project(models.Model):
 
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, default=1, on_delete="CASCADE")
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, default=1,  on_delete=models.CASCADE)
     nickname = models.CharField(max_length=100)
     carMake = models.CharField(max_length=20, blank=True)
     carModel = models.CharField(max_length=50, blank=True)
@@ -45,7 +45,7 @@ class Project(models.Model):
 
 class ProjectImages(models.Model):
 
-    project = models.ForeignKey(Project, related_name='images', on_delete="CASCADE")
+    project = models.ForeignKey(Project, related_name='images',  on_delete=models.CASCADE)
     image = models.ImageField(upload_to='photos/%Y/%m/%d')
     alt_text = models.CharField(max_length=50, default="")
     isFeatured = models.BooleanField(default=False)
