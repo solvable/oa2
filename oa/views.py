@@ -55,27 +55,6 @@ class ContactMixin(FormMixin):
         return super().form_valid(form)
 
 
-
-    # def post(self, request, *args, **kwargs):
-
-    #     subject = request.POST.get('contact_name', '')
-    #     from_email = request.POST.get('contact_email', '')
-    #     message = request.POST.get('message', '')
-    #     phone_number = request.POST.get('phone_number',"")
-    #     email_content = "Dear Oxaudio"+"\n" + "FROM: "+subject+ "\n"+ "PHONE NUMBER: " + phone_number +'\n'+message
-
-    #     try:
-    #         send_mail(subject, email_content, from_email, ['ryan@oxaudio.com'], fail_silently=False)
-    #         messages.add_message(request, messages.INFO, 'Thanks for contacting us, we will be in touch shortly!.')
-    #         print("success")
-
-    #     except BadHeaderError:
-    #         return HttpResponse('Invalid header found.')
-
-
-    #     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
-
-
 class IndexView(ContactMixin, generic.TemplateView):
     template_name = 'index.html'
 
@@ -91,7 +70,39 @@ class ProjectView(ContactMixin, generic.DetailView):
         context['form'] = ContactMixin
         return context
 
+    def get_success_url(self):
+        return reverse('index')
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = self.get_form()
+        return context
+
+    def post(self, request, *args, **kwargs):
+        form = self.get_form()
+        if form.is_valid():
+            subject = request.POST.get('contact_name', '')
+            from_email = request.POST.get('contact_email', '')
+            message = request.POST.get('message', '')
+            phone_number = request.POST.get('phone_number',"")
+            email_content = "Dear Oxaudio"+"\n" + "FROM: "+subject+ "\n"+ "PHONE NUMBER: " + phone_number +'\n'+message
+
+            try:
+                send_mail(subject, email_content, from_email, ['ryan@oxaudio.com'], fail_silently=False)
+                messages.add_message(request, messages.INFO, 'Thanks for contacting us, we will be in touch shortly!.')
+                print("success")
+
+            except BadHeaderError:
+                return HttpResponse('Invalid header found.')
+
+            return self.form_valid(form)
+        else:
+            return self.form_invalid(form)
+
+    def form_valid(self, form):
+        # Here, we would record the user's interest using the message
+        # passed in form.cleaned_data['message']
+        return super().form_valid(form)
 
 class GalleryView(ContactMixin, generic.ListView):
     model = Project

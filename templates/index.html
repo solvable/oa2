@@ -12,15 +12,10 @@
             <div class="col l12 m12">
                 <div class="card z-depth-0">
                     <div class="card-image waves-effect waves-block waves-light">
+                        <a href="{% url 'gallery' %}">
                         <img src="{% static "img/projects.jpg" %}" class="activator" alt="Projects page">
                         <span class="card-title activator black white-text">Project Gallery</span>
-                    </div>
-
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Project Gallery<i
-                                class="material-icons right">close</i></span>
-                        <p>Get some inspiration or a little envy, then call to make an appointment.</p>
-                        <p><a href="{% url 'gallery' %}" class="btn lime accent-4 black-text">See more..</a></p>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -28,15 +23,10 @@
             <div class="col l6 m12">
                 <div class="card z-depth-0">
                     <div class="card-image waves-effect waves-block waves-light">
-                        <img src="{% static "img/stereo.jpg" %}" class="activator" alt="Car Stereos">
-                        <span class="card-title activator black white-text">Systems</span>
-                    </div>
-
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4"><h4>Systems</h4><i
-                                class="material-icons right">close</i></span>
-                        <p>With components from all the major manufacturers we've got what you're looking for.</p>
-                        <p><a href="{% url 'systems' %}" class="btn lime accent-4 black-text">See more..</a></p>
+                        <a href="{% url 'systems' %}">
+                            <img src="{% static "img/stereo.jpg" %}" class="activator" alt="Car Stereos">
+                            <span class="card-title activator black white-text">Systems</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -46,15 +36,10 @@
             <div class="col l6 m12">
                 <div class="card z-depth-0">
                     <div class="card-image waves-effect waves-block waves-light">
-                        <img src="{% static "img/alarm.jpg" %}" class="activator" alt="car alarms">
-                        <span class="card-title activator black white-text">Security</span>
-                    </div>
-
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Security<i
-                                class="material-icons right">close</i></span>
-                        <p>At Oxaudio we don’t just do audio. We are also mobile security experts.</p>
-                        <p><a href="{% url "security" %}" class="btn lime accent-4 black-text">See more..</a></p>
+                        <a href="{% url 'security' %}">
+                            <img src="{% static "img/alarm.jpg" %}" class="activator" alt="car alarms">
+                            <span class="card-title activator black white-text">Security</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -63,15 +48,10 @@
             <div class="col l6 m12">
                 <div class="card z-depth-0">
                     <div class="card-image waves-effect waves-block waves-light">
-                        <img src="{% static "img/remote start.jpg" %}" class="activator" alt="remote start">
-                        <span class="card-title activator black white-text">Remote Start</span>
-                    </div>
-
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Remote Start<i
-                                class="material-icons right">close</i></span>
-                        <p>Tired of freezing your ass off all winter? Remote start is the answer.</p>
-                        <p><a href="{% url "remote-start" %}" class="btn lime accent-4 black-text">See more..</a></p>
+                        <a href="{% url 'remote-start' %}">
+                            <img src="{% static "img/remote start.jpg" %}" class="activator" alt="remote start">
+                            <span class="card-title activator black white-text">Remote Start</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -80,15 +60,10 @@
             <div class="col l6 m12">
                 <div class="card z-depth-0">
                     <div class="card-image waves-effect waves-block waves-light">
-                        <img src="{% static "img/navigation.jpg" %}" class="activator" alt="navigation system">
-                        <span class="card-title activator black white-text">Navigation</span>
-                    </div>
-
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Navigation<i
-                                class="material-icons right">close</i></span>
-                        <p>Stop getting lost... if you don't have a nav system it's time to step up your game.</p>
-                        <p><a href="{% url "nav-systems" %}" class="btn lime accent-4 black-text">See more..</a></p>
+                        <a href="{% url 'nav-systems' %}">
+                            <img src="{% static "img/navigation.jpg" %}" class="activator" alt="navigation system">
+                            <span class="card-title activator black white-text">Navigation</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -97,15 +72,10 @@
             <div class="col l6 m12">
                 <div class="card z-depth-0">
                     <div class="card-image waves-effect waves-block waves-light">
-                        <img src="{% static "img/detailing.jpg" %}" class="activator" alt="automotive detailing">
-                        <span class="card-title activator black white-text">Detailing</span>
-                    </div>
-
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Detailing<i
-                                class="material-icons right">close</i></span>
-                        <p>Details details details. So fresh...so clean.</p>
-                        <p><a href="{% url "detailing"%}" class="btn lime accent-4 black-text">See more..</a></p>
+                        <a href="{% url 'detailing' %}">
+                            <img src="{% static "img/detailing.jpg" %}" class="activator" alt="automotive detailing">
+                            <span class="card-title activator black white-text">Detailing</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -114,34 +84,17 @@
             <div class="col l6 m12">
                 <div class="card z-depth-0">
                     <div class="card-image waves-effect waves-block waves-light">
-                        <img src="{% static "img/tint.jpg" %}" class="activator" alt="window tinting">
-                        <span class="card-title activator black white-text">Window Tint</span>
-                    </div>
-
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Window Tint<i
-                                class="material-icons right">close</i></span>
-                        <p>Protect your interior from fading and your valuables from prying eyes.</p>
-                        <p><a href="{% url "tint" %}" class="btn lime accent-4 black-text">See more..</a></p>
+                        <a href="{% url 'tint' %}">
+                            <img src="{% static "img/tint.jpg" %}" class="activator" alt="window tinting">
+                            <span class="card-title activator black white-text">Window Tint</span>
+                        </a>
                     </div>
                 </div>
             </div>
-
-
-
-
         </div>
     </div>
 
-
-
-
-
-
-
-
-
 {% endblock content %}
 {% block footer %}
-    {{ block.super }}
+{{ block.super }}
 {% endblock footer %}
